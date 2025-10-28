@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kumar Shantanu — Portfolio</title>
+  <meta name="description" content="Portfolio of Kumar Shantanu — JIT Compiler, ML projects, Publications, and Contact." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0f1724;--surface:#0b1220;--muted:#94a3b8;--accent:#7c3aed;--glass:rgba(255,255,255,0.04);--card-radius:14px;--max-width:1100px;--mono:'JetBrains Mono',monospace;--ui:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial}
+    :root[data-theme='light']{--bg:#f7fafc;--surface:#ffffff;--muted:#475569;--accent:#6d28d9;--glass:rgba(2,6,23,0.04)}
+    *{box-sizing:border-box}html,body{height:100%}body{margin:0;font-family:var(--ui);background:linear-gradient(180deg,var(--bg),#061022 120%);color:#e6eef8;-webkit-font-smoothing:antialiased;line-height:1.5;display:flex;justify-content:center;padding:48px 20px}
+    .container{width:100%;max-width:var(--max-width)}header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:28px}
+    .brand{display:flex;align-items:center;gap:12px}.logo{width:56px;height:56px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),#4c1d95);box-shadow:0 6px 20px rgba(2,6,23,0.6);font-weight:800;color:white;font-family:var(--mono)}nav{display:flex;gap:12px;align-items:center}nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px;font-weight:600}nav a.active,nav a:hover{color:var(--surface);background:var(--glass)}.controls{display:flex;gap:8px;align-items:center}.btn{border:0;padding:10px 12px;border-radius:10px;background:var(--glass);cursor:pointer;color:var(--muted);font-weight:600}.btn.primary{background:linear-gradient(90deg,var(--accent),#5b21b6);color:white;box-shadow:0 8px 30px rgba(92,33,182,0.25)}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-bottom:28px}.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-radius:var(--card-radius);padding:28px;backdrop-filter: blur(6px)}.headline{font-size:clamp(28px,4.2vw,44px);margin:0 0 6px 0;font-weight:800}.sub{color:var(--muted);margin:0 0 18px 0}.cta-row{display:flex;gap:12px}
+    .profile{display:grid;grid-template-rows:auto auto;gap:12px;align-items:center}.avatar{width:100%;height:420px;border-radius:12px;overflow:hidden;position:relative}.avatar img{width:100%;height:100%;object-fit:cover;display:block}.skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}.chip{padding:8px 10px;border-radius:999px;background:var(--glass);color:var(--muted);font-weight:700}
+    .section{margin:36px 0}.section h2{margin:0 0 18px 0}.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}.project-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}.project{position:relative;border-radius:12px;overflow:hidden;padding:0;background:var(--surface);box-shadow:0 8px 30px rgba(2,6,23,0.6);transition:transform .28s ease, box-shadow .28s ease}.project:hover{transform:translateY(-6px)}.project img{width:100%;height:160px;object-fit:cover;display:block}.project .meta{padding:12px}.project .title{font-weight:700;margin:0}.project .desc{color:var(--muted);font-size:14px;margin:6px 0 0}
+    .modal{position:fixed;inset:0;display:grid;place-items:center;background:rgba(2,6,23,0.6);z-index:60;opacity:0;pointer-events:none;transition:opacity .18s ease}.modal.open{opacity:1;pointer-events:auto}.modal-card{width:clamp(320px,80vw,900px);max-height:85vh;overflow:auto;border-radius:12px;background:var(--surface);padding:18px}
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease}.reveal.in-view{opacity:1;transform:none}form{display:grid;gap:10px}input,textarea{padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}footer{margin-top:36px;padding:20px;text-align:center;color:var(--muted)}@media (max-width:980px){.hero{grid-template-columns:1fr}.avatar{height:320px}}
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">KS</div>
+        <div>
+          <div style="font-weight:800">Kumar Shantanu</div>
+          <div style="font-size:13px;color:var(--muted);">B.Tech CSE • Frontend & ML • Researcher</div>
+        </div>
+      </div>
+
+      <nav role="navigation" aria-label="Main Navigation">
+        <a href="#about" class="active">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="controls">
+        <button id="themeToggle" class="btn" title="Toggle theme">Toggle</button>
+        <a class="btn primary" href="#contact">Hire / Collaborate</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="card reveal" id="about">
+          <h1 class="headline">Hi — I'm Kumar Shantanu.</h1>
+          <p class="sub">I work on compiler systems, machine learning for public health, and full-stack engineering. Published researcher with hands-on experience building JIT compilers and ML pipelines.</p>
+          <div class="cta-row">
+            <a class="btn primary" href="#projects">View Projects</a>
+            <a class="btn" href="/mnt/data/Latest_Resume.pdf" download>Download Resume</a>
+          </div>
+
+          <div style="margin-top:18px">
+            <strong style="display:block;margin-bottom:8px">Contact</strong>
+            <p class="sub">+91 82877 85354 • <a href="mailto:shantanu22505@gmail.com">shantanu22505@gmail.com</a></p>
+            <p class="sub">LinkedIn: <a href="https://www.linkedin.com/in/kumar-shantanu-982963291/" target="_blank">kumar-shantanu</a> • GitHub: <a href="https://github.com/Shantanu-0007" target="_blank">Shantanu-0007</a></p>
+          </div>
+        </div>
+
+        <aside class="card profile reveal">
+          <div class="avatar">
+            <img src="https://images.unsplash.com/photo-1531123414780-f1f4f4d5b2f6?q=80&w=1200&auto=format&fit=crop&crop=faces" alt="Portrait of Kumar Shantanu">
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div>
+                <div style="font-weight:700">Graphic Era Hill University, Dehradun</div>
+                <div style="color:var(--muted);font-size:13px">B.Tech in Computer Science & Engineering — CGPA: 7.78</div>
+              </div>
+              <div style="text-align:right">
+                <div style="font-weight:800">Researcher</div>
+                <div style="color:var(--muted);font-size:13px">IEEE Publications (2024)</div>
+              </div>
+            </div>
+
+            <div class="skills" style="margin-top:12px">
+              <span class="chip">C / C++</span>
+              <span class="chip">Python</span>
+              <span class="chip">JavaScript</span>
+              <span class="chip">HTML / CSS</span>
+              <span class="chip">AWS • MySQL</span>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section" id="projects">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <h2>Selected Projects</h2>
+          <div style="color:var(--muted);font-size:13px">Open Source • Research • Tools</div>
+        </div>
+
+        <div class="filters">
+          <button class="btn primary" data-filter="*">All</button>
+          <button class="btn" data-filter="compiler">Compiler</button>
+          <button class="btn" data-filter="ml">Machine Learning</button>
+          <button class="btn" data-filter="tool">Tooling</button>
+        </div>
+
+        <div class="project-grid" id="grid">
+
+          <article class="project" data-tags="compiler">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1400&auto=format&fit=crop" alt="JIT Compiler">
+            <div class="meta">
+              <h3 class="title">JIT Compiler with Adaptive Optimization</h3>
+              <p class="desc">A Just-In-Time compiler that generates optimized machine instructions at runtime with adaptive strategies. Implemented in C/C++.</p>
+              <div style="margin-top:10px;display:flex;gap:8px">
+                <a class="btn" href="https://github.com/Shantanu-0007/JIT_Compiler_with_Addaptive_Optimization" target="_blank">Source</a>
+                <button class="btn" data-open="0">Preview</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project" data-tags="ml">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1508873699372-7ae7f7d1c8e7?q=80&w=1400&auto=format&fit=crop" alt="Dengue ML">
+            <div class="meta">
+              <h3 class="title">Studying Dengue Spread — ML</h3>
+              <p class="desc">Predicting dengue risk using climatic features. Evaluated Random Forest, Logistic Regression, Naive Bayes and KNN; KNN achieved top performance on the dataset.</p>
+              <div style="margin-top:10px;display:flex;gap:8px">
+                <a class="btn" href="https://github.com/Shantanu-0007/Dengue_Spread_ML_Project/blob/main/Data%20cleaning%20and%20algo%20test.ipynb" target="_blank">Notebook</a>
+                <button class="btn" data-open="1">Preview</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project" data-tags="ml">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1581092334423-5c9d2f2f5c5b?q=80&w=1400&auto=format&fit=crop" alt="COVID Survival">
+            <div class="meta">
+              <h3 class="title">COVID-19 Survival Rate Analysis</h3>
+              <p class="desc">Comparison of tree-based ensemble algorithms on a large dataset (236,526 entries). Found CatBoost to be the most accurate; explored potential for deep learning extensions.</p>
+              <div style="margin-top:10px;display:flex;gap:8px">
+                <a class="btn" href="https://github.com/Shantanu-0007/Determining_COVID-19_Survival_Rate_ML/blob/main/Data%20Explore.ipynb" target="_blank">Notebook</a>
+                <button class="btn" data-open="2">Preview</button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <div class="modal" id="modal" aria-hidden="true">
+        <div class="modal-card">
+          <button id="modalClose" class="btn" style="float:right">Close</button>
+          <div id="modalContent"></div>
+        </div>
+      </div>
+
+      <section class="section" id="publications">
+        <h2>Publications</h2>
+        <div style="display:grid;gap:12px;margin-top:12px">
+          <div class="card reveal">
+            <strong>Studying Dengue Spread using Climatic Conditions and Machine Learning Algorithms</strong>
+            <div style="color:var(--muted);font-size:14px">Authors: Kumar Shantanu et al. — IEEE TIACOMP 2024. <a href="https://ieeexplore.ieee.org/search/searchresult.jsp?newsearch=true&queryText=10.1109%2FTIACOMP64125.2024.00067" target="_blank">IEEE link</a></div>
+          </div>
+
+          <div class="card reveal">
+            <strong>Analysis of Machine Learning Algorithms for Predicting Titanic Disaster Survival Rate</strong>
+            <div style="color:var(--muted);font-size:14px">Authors: Kumar Shantanu et al. — IEEE ICSES 2024. <a href="https://ieeexplore.ieee.org/search/searchresult.jsp?newsearch=true&queryText=10.1109%2FICSES63445.2024.10763371" target="_blank">IEEE link</a></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <h2>Contact & Achievements</h2>
+        <div style="display:grid;grid-template-columns:1fr 360px;gap:18px;margin-top:12px">
+          <div class="card reveal">
+            <p style="color:var(--muted)">I am open to research collaborations, internships, and roles in compiler engineering, ML for health, and frontend engineering.</p>
+            <ul style="color:var(--muted)">
+              <li>150+ LeetCode problems solved</li>
+              <li>3 Research papers published in IEEE (2024)</li>
+              <li>Salesforce Virtual Internship (May–Jul 2025)</li>
+              <li>IIT Kanpur — R Programming Certification</li>
+              <li>AWS Cloud Foundations & AWS Generative AI Foundations</li>
+            </ul>
+
+            <form id="contactForm">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="email" name="email" placeholder="Your email" required>
+              <input type="text" name="subject" placeholder="Subject">
+              <textarea name="message" rows="6" placeholder="Message" required></textarea>
+              <div style="display:flex;gap:8px;align-items:center">
+                <button class="btn primary" type="submit">Send message</button>
+                <div style="color:var(--muted);font-size:13px">Or email: <a href="mailto:shantanu22505@gmail.com">shantanu22505@gmail.com</a></div>
+              </div>
+            </form>
+          </div>
+
+          <aside class="card reveal">
+            <h3 style="margin-top:0">Quick Links</h3>
+            <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
+              <a class="btn" href="https://github.com/Shantanu-0007" target="_blank">GitHub</a>
+              <a class="btn" href="https://www.linkedin.com/in/kumar-shantanu-982963291/" target="_blank">LinkedIn</a>
+              <a class="btn" href="mailto:shantanu22505@gmail.com">Email</a>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <footer>
+        Built with ❤️ • <span id="year"></span> • Kumar Shantanu
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const root = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const stored = localStorage.getItem('site-theme'); if(stored) root.setAttribute('data-theme', stored);
+    themeToggle.addEventListener('click', ()=>{const current = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';root.setAttribute('data-theme', current);localStorage.setItem('site-theme', current);});
+    const observer = new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting) e.target.classList.add('in-view');})},{threshold:0.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+    document.querySelectorAll('[data-filter]').forEach(btn=>{btn.addEventListener('click', ()=>{const tag = btn.getAttribute('data-filter');document.querySelectorAll('[data-filter]').forEach(b=>b.classList.remove('primary'));btn.classList.add('primary');document.querySelectorAll('.project').forEach(card=>{const tags = card.getAttribute('data-tags').split(' ');card.style.display = (tag === '*' || tags.includes(tag)) ? '' : 'none';})})});
+    const modal = document.getElementById('modal');const modalContent = document.getElementById('modalContent');const modalClose = document.getElementById('modalClose');
+    const previews = [
+      `<h3>JIT Compiler — Overview</h3><p style="color:var(--muted)">C/C++ codebase implementing adaptive optimization strategies in a JIT flow. Repository contains build instructions, test harness and sample benchmarks.</p><a class="btn" href="https://github.com/Shantanu-0007/JIT_Compiler_with_Addaptive_Optimization" target="_blank">Open repo</a>`,
+      `<h3>Dengue Spread — Notes</h3><p style="color:var(--muted)">Data cleaning, feature engineering from climatic factors, model evaluation. Notebook and results are on GitHub.</p><a class="btn" href="https://github.com/Shantanu-0007/Dengue_Spread_ML_Project/blob/main/Data%20cleaning%20and%20algo%20test.ipynb" target="_blank">Open notebook</a>`,
+      `<h3>COVID-19 Survival Rate — Notes</h3><p style="color:var(--muted)">Large-scale experiment comparing ensemble models. Notebook includes EDA, preprocessing and model comparisons.</p><a class="btn" href="https://github.com/Shantanu-0007/Determining_COVID-19_Survival_Rate_ML/blob/main/Data%20Explore.ipynb" target="_blank">Open notebook</a>`
+    ];
+    document.querySelectorAll('.project [data-open]').forEach(btn=>{btn.addEventListener('click', ()=>{const idx = Number(btn.getAttribute('data-open'));modalContent.innerHTML = previews[idx] || '<p>No preview</p>';modal.classList.add('open');modal.setAttribute('aria-hidden','false');})});
+    modalClose.addEventListener('click', ()=>{ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); });modal.addEventListener('click', (e)=>{ if(e.target === modal) { modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); } });
+    const form = document.getElementById('contactForm');form.addEventListener('submit', (e)=>{e.preventDefault();const fd = new FormData(form);const to = 'shantanu22505@gmail.com';const subject = encodeURIComponent(fd.get('subject') || 'Portfolio Contact');const body = encodeURIComponent(`Name: ${fd.get('name')}
+Email: ${fd.get('email')}
+
+${fd.get('message')}`);window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;});
+    const navLinks = document.querySelectorAll('nav a');const sections = Array.from(navLinks).map(a=>document.querySelector(a.getAttribute('href')));const navObserver = new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){navLinks.forEach(a=>a.classList.toggle('active', a.getAttribute('href') === `#${entry.target.id}`));}})},{threshold:0.45});sections.forEach(s=>{ if(s) navObserver.observe(s); });document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') { modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); } });
+  </script>
+</body>
+</html>
